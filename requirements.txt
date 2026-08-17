@@ -1,0 +1,6 @@
+# Standard library only for now.
+#
+# Add a package here only when a project in this repository actually needs it, e.g.:
+# requests
+# flask
+# numpy
