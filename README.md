@@ -4,6 +4,8 @@ A personal, practical Python learning and software-engineering repository — fr
 
 The learning source is a ~160-lesson Python playlist. This repository is organized around **concepts, not videos**: the videos are the learning source, the repository is the engineering evidence.
 
+Track your video-by-video progress in [PLAYLIST.md](PLAYLIST.md).
+
 ## Why I Am Learning Python
 
 Write your own motivation here: why Python, what you want to build with it, and what "mastery" means to you.
