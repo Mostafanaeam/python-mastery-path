@@ -1,35 +1,15 @@
-# Data Types
+# انواع البيانات
 
-## Learning Objective
+في البرمجة، نوع البيانات هو مفهوم مهم.
 
-What should I understand after finishing this topic?
+يمكن للمتغيرات تخزين بيانات من أنواع مختلفة، ويمكن للأنواع المختلفة القيام بأشياء مختلفة.
+## تحتوي لغة Python على أنواع البيانات التالية المضمنة افتراضيًا، في هذه الفئات:
 
-## Concepts
-
-## Examples
-
-Code written while learning the topic.
-
-## Exercises
-
-Problems I solved while learning.
-
-## Problems I Faced
-
-What went wrong?
-
-## Debugging
-
-How I diagnosed and fixed problems.
-
-## Questions
-
-Things I still don't fully understand.
-
-## Key Takeaways
-
-What I actually learned.
-
-## Further Practice
-
-What I should practice next.
+- Text Type:	str
+- Numeric Types:	int, float, complex
+- Sequence Types:	list, tuple, range
+- Mapping Type:	dict
+- Set Types:	set, frozenset
+- Boolean Type:	bool
+- Binary Types:	bytes, bytearray, memoryview
+- None Type:	NoneType
