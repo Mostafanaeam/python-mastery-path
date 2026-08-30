@@ -1,35 +1,15 @@
-# Lists
+# تحويل بايثون
 
-## Learning Objective
+تحديد نوع المتغير
+قد تحتاج أحيانًا إلى تحديد نوع متغير. يُمكنك فعل ذلك باستخدام التحويل. بايثون لغة كائنية التوجه، ولذلك تستخدم الأصناف لتعريف أنواع البيانات، بما في ذلك أنواعها الأساسية.
 
-What should I understand after finishing this topic?
+لذا، يتم التحويل في بايثون باستخدام دوال البناء.
+- [int()](https://www.w3schools.com/python/ref_func_int.asp) يقوم بإنشاء عدد صحيح من قيمة عددية صحيحة، أو قيمة عددية عشرية (عن طريق إزالة جميع الأرقام العشرية)، أو قيمة نصية (بشرط أن تمثل السلسلة عددًا صحيحًا).
+- [float()](https://www.w3schools.com/python/ref_func_float.asp) يقوم بإنشاء عدد عشري من عدد صحيح حرفي، أو عدد عشري حرفي، أو سلسلة نصية حرفية (بشرط أن تمثل السلسلة عددًا عشريًا أو عددًا صحيحًا).
+- [str()](https://www.w3schools.com/python/ref_func_str.asp) يقوم بإنشاء سلسلة نصية من مجموعة واسعة من أنواع البيانات، بما في ذلك السلاسل النصية والأعداد الصحيحة والأعداد العشرية.
 
-## Concepts
-
-## Examples
-
-Code written while learning the topic.
-
-## Exercises
-
-Problems I solved while learning.
-
-## Problems I Faced
-
-What went wrong?
-
-## Debugging
-
-How I diagnosed and fixed problems.
-
-## Questions
-
-Things I still don't fully understand.
-
-## Key Takeaways
-
-What I actually learned.
-
-## Further Practice
-
-What I should practice next.
+```python
+x = int(1)   # x will be 1
+y = int(2.8) # y will be 2
+z = int("3") # z will be 3
+```
