@@ -1,35 +1,19 @@
-# Tuples
+# Python Booleans
 
-## Learning Objective
+و نوع البيانات المنطقية الذي يمثل إحدى قيمتين فقط: صواب True أو خطأ False
 
-What should I understand after finishing this topic?
+====================================
 
-## Concepts
+# مصطلحات برمجية :-
 
-## Examples
+| الكلمة | المعني |
+| :-------- | :------------------------- |
+| `` | |
+| `` | |
+| `` | |
 
-Code written while learning the topic.
+============================
 
-## Exercises
+## المصدر:-
 
-Problems I solved while learning.
-
-## Problems I Faced
-
-What went wrong?
-
-## Debugging
-
-How I diagnosed and fixed problems.
-
-## Questions
-
-Things I still don't fully understand.
-
-## Key Takeaways
-
-What I actually learned.
-
-## Further Practice
-
-What I should practice next.
+- [Python Booleans with w3schools](https://www.w3schools.com/python/python_booleans.asp)

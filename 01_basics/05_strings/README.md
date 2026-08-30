@@ -118,13 +118,13 @@ The table below lists common escape characters in Python, along with their funct
 
 | الكلمة | المعني |
 | :-------- | :------------------------- |
-| `` |  |
-| `` | نوع من بيانات الحاسوب يُستخدم لتمثيل الأعداد التي تحتوي على كسور أو أجزاء عشرية |
-| `` | تُكتب الأعداد المركبة باستخدام الحرف "j" كجزء تخيلي |
-
+| `` | |
+| `` | |
+| `` | |
 
 ============================
-### المصدر:-
+
+## المصدر:-
 
 - [Python Strings with w3schools](https://www.w3schools.com/python/python_strings.asp)
 - [Python - Slicing Strings with w3schools](https://www.w3schools.com/python/python_strings_slicing.asp)
@@ -133,5 +133,3 @@ The table below lists common escape characters in Python, along with their funct
 - [Python - Format - Strings with w3schools](https://www.w3schools.com/python/python_strings_concatenate.asp)
 - [Python - Escape Characters with w3schools](https://www.w3schools.com/python/python_strings_escape.asp)
 - [Python - String Methods with w3schools](https://www.w3schools.com/python/python_strings_methods.asp)
-
-
