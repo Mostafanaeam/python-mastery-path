@@ -2,24 +2,32 @@
 
 A simple Python CLI application that collects personal information from the user, validates the entered name, calculates the user's current age from their date of birth, and displays the information in a formatted personal profile.
 
+---
+
 ## 🌐 Language
 
 This README is available in two languages:
 
 - 🇬🇧 [English](#english)
-- 🇪🇬 [العربية](#العربية)
+- 🇪🇬 [العربية](#arabic)
 
 ---
 
 ## 📑 Contents
 
 ### 🇬🇧 English
-<a id="english"></a>
 
 - [Project Overview](#project-overview)
 - [Project Goals](#project-goals)
 - [Features](#features)
+  - [Name Validation](#1-name-validation)
+  - [Date of Birth Input](#2-date-of-birth-input)
+  - [Automatic Age Calculation](#3-automatic-age-calculation)
+  - [Personal Information](#4-personal-information)
+  - [Formatted Profile Output](#5-formatted-profile-output)
 - [Concepts Applied](#concepts-applied)
+- [Name Validation Logic](#name-validation-logic)
+- [Age Calculation Logic](#age-calculation-logic)
 - [Project Structure](#project-structure)
 - [How to Run](#how-to-run)
 - [Example Run](#example-run)
@@ -27,8 +35,41 @@ This README is available in two languages:
 - [What I Learned](#what-i-learned)
 - [Future Improvements](#future-improvements)
 - [Bonus](#bonus)
+- [Notes](#notes)
+
+### 🇪🇬 العربية
+
+- [نبذة عن المشروع](#نبذة-عن-المشروع)
+- [أهداف المشروع](#أهداف-المشروع)
+- [خصائص المشروع](#خصائص-المشروع)
+  - [التحقق من صحة الاسم](#التحقق-من-صحة-الاسم)
+  - [إدخال تاريخ الميلاد](#إدخال-تاريخ-الميلاد)
+  - [حساب العمر تلقائيًا](#حساب-العمر-تلقائيًا)
+  - [المعلومات الشخصية](#المعلومات-الشخصية)
+  - [تنسيق البيانات](#تنسيق-البيانات)
+- [منطق حساب العمر](#منطق-حساب-العمر)
+- [منطق التحقق من الاسم](#منطق-التحقق-من-الاسم)
+  - [التعامل مع الإدخال الفارغ](#التعامل-مع-الإدخال-الفارغ)
+- [دورة التحقق من الاسم](#دورة-التحقق-من-الاسم)
+- [البيانات التي يتم إدخالها](#البيانات-التي-يتم-إدخالها)
+- [النتيجة النهائية](#النتيجة-النهائية)
+- [المفاهيم التي تم تطبيقها](#المفاهيم-التي-تم-تطبيقها)
+- [هيكل المشروع](#هيكل-المشروع)
+- [تشغيل المشروع](#تشغيل-المشروع)
+- [مثال على تشغيل البرنامج](#مثال-على-تشغيل-البرنامج)
+- [التحديات التي واجهتها](#التحديات-التي-واجهتها)
+- [ماذا تعلمت](#ماذا-تعلمت)
+- [تحسينات مستقبلية](#تحسينات-مستقبلية)
+- [Bonus](#bonus-1)
+- [ملاحظات](#ملاحظات)
 
 ---
+
+<a id="english"></a>
+
+# 🇬🇧 English
+
+<a id="project-overview"></a>
 
 ## 📌 Project Overview
 
@@ -36,34 +77,38 @@ The **Personal Profile CLI** is a beginner-friendly Python project designed to p
 
 The program asks the user for:
 
-* Name
-* Date of birth
-* Country
-* Job
-* Height
-* Weight
+- Name
+- Date of birth
+- Country
+- Job
+- Height
+- Weight
 
 It then processes the input, validates the name, calculates the current age, and displays the final profile in a clean format.
 
 ---
 
+<a id="project-goals"></a>
+
 ## 🎯 Project Goals
 
 The main goal of this project is to apply the following Python concepts in a practical project:
 
-* Variables
-* Data Types
-* Type Casting
-* Strings
-* String Methods
-* String Formatting
-* User Input
-* Conditional Statements
-* Loops
-* Boolean Logic
-* Basic Date/Time handling
+- Variables
+- Data Types
+- Type Casting
+- Strings
+- String Methods
+- String Formatting
+- User Input
+- Conditional Statements
+- Loops
+- Boolean Logic
+- Basic Date/Time handling
 
 ---
+
+<a id="features"></a>
 
 ## ⚙️ Features
 
@@ -73,10 +118,10 @@ The program validates the user's name before continuing.
 
 It checks that:
 
-* The input is not empty.
-* The input is not only whitespace.
-* Every character is either a letter or a space.
-* Invalid input causes the program to ask again.
+- The input is not empty.
+- The input is not only whitespace.
+- Every character is either a letter or a space.
+- Invalid input causes the program to ask again.
 
 Example:
 
@@ -130,12 +175,12 @@ datetime.datetime.now()
 
 It calculates the age based on:
 
-* Current year
-* Current month
-* Current day
-* Birth year
-* Birth month
-* Birth day
+- Current year
+- Current month
+- Current day
+- Birth year
+- Birth month
+- Birth day
 
 The program also handles the case where the user's birthday has not happened yet this year.
 
@@ -143,7 +188,8 @@ For example:
 
 ```text
 Current date: 2026-09-03
-Birth date:   2004-10-10
+
+Birth date: 2004-10-10
 ```
 
 The calculated age will be:
@@ -202,26 +248,30 @@ Weight     : 88 kg
 
 ---
 
+<a id="concepts-applied"></a>
+
 ## 🧠 Concepts Applied
 
-| Concept      | How It Is Used                           |
-| ------------ | ---------------------------------------- |
-| Variables    | Store user information                   |
-| `input()`    | Receive information from the user        |
-| `int()`      | Convert numeric input                    |
-| Strings      | Handle names, country, and job           |
-| `.strip()`   | Detect empty/whitespace input            |
-| `.isalpha()` | Validate name characters                 |
-| `all()`      | Validate all characters in the name      |
-| `.title()`   | Format text                              |
-| `while`      | Repeat input until valid                 |
-| `continue`   | Restart validation when input is invalid |
-| `break`      | Exit the validation loop                 |
-| `if`         | Check validation and calculate age       |
-| `datetime`   | Get the current date                     |
-| f-strings    | Format output                            |
+| Concept | How It Is Used |
+| --- | --- |
+| Variables | Store user information |
+| `input()` | Receive information from the user |
+| `int()` | Convert numeric input |
+| Strings | Handle names, country, and job |
+| `.strip()` | Detect empty/whitespace input |
+| `.isalpha()` | Validate name characters |
+| `all()` | Validate all characters in the name |
+| `.title()` | Format text |
+| `while` | Repeat input until valid |
+| `continue` | Restart validation when input is invalid |
+| `break` | Exit the validation loop |
+| `if` | Check validation and calculate age |
+| `datetime` | Get the current date |
+| f-strings | Format output |
 
 ---
+
+<a id="name-validation-logic"></a>
 
 ## 🔍 Name Validation Logic
 
@@ -238,7 +288,9 @@ This means that every character must satisfy at least one of these conditions:
 
 ```text
 Character is a letter
+
 OR
+
 Character is a space
 ```
 
@@ -252,6 +304,7 @@ This prevents accepting:
 
 ```text
 ""
+
 "   "
 ```
 
@@ -279,6 +332,8 @@ Continue Program
 
 ---
 
+<a id="age-calculation-logic"></a>
+
 ## 🧮 Age Calculation Logic
 
 The initial age is calculated using:
@@ -300,10 +355,13 @@ This makes the calculation more accurate than simply subtracting the birth year 
 
 ---
 
+<a id="project-structure"></a>
+
 ## 🗂️ Project Structure
 
 ```text
 python-personal-profile/
+
 │
 ├── README.md
 │
@@ -311,6 +369,8 @@ python-personal-profile/
 ```
 
 ---
+
+<a id="how-to-run"></a>
 
 ## ▶️ How to Run
 
@@ -328,16 +388,25 @@ python main.py
 
 ---
 
+<a id="example-run"></a>
+
 ## 💻 Example Run
 
 ```text
 Enter your name: Mostafa NAEAM
+
 Enter your birth year: 2004
+
 Enter your birth month: 10
+
 Enter your birth day: 10
+
 Enter your country: Egypt
+
 Enter your job: Software Engineer
+
 Enter your height in cm: 174
+
 Enter your weight in kg: 88
 
 =================================
@@ -354,6 +423,8 @@ Weight     : 88 kg
 
 ---
 
+<a id="challenges"></a>
+
 ## 🚧 Challenges
 
 ### Name Validation
@@ -362,11 +433,11 @@ One of the main challenges was validating the name correctly.
 
 The validation needed to handle:
 
-* Empty input
-* Whitespace-only input
-* Numbers
-* Special characters
-* Names containing spaces
+- Empty input
+- Whitespace-only input
+- Numbers
+- Special characters
+- Names containing spaces
 
 The solution used `all()` with a generator expression:
 
@@ -392,41 +463,47 @@ Therefore, the program compares the current month/day with the birth month/day a
 
 ---
 
+<a id="what-i-learned"></a>
+
 ## 📚 What I Learned
 
 Through this project, I practiced turning basic Python concepts into a complete small CLI application.
 
 The most important concepts I practiced were:
 
-* Receiving and processing user input.
-* Converting data between types.
-* Validating user input.
-* Using `while` loops for input validation.
-* Using `all()` with generator expressions.
-* Working with strings and string methods.
-* Using conditional logic.
-* Working with Python's `datetime` module.
-* Formatting console output.
-* Thinking about edge cases instead of only the happy path.
+- Receiving and processing user input.
+- Converting data between types.
+- Validating user input.
+- Using `while` loops for input validation.
+- Using `all()` with generator expressions.
+- Working with strings and string methods.
+- Using conditional logic.
+- Working with Python's `datetime` module.
+- Formatting console output.
+- Thinking about edge cases instead of only the happy path.
 
 ---
+
+<a id="future-improvements"></a>
 
 ## 🚀 Future Improvements
 
 Possible improvements for future versions:
 
-* Add better validation for birth date.
-* Prevent impossible dates such as month `13`.
-* Validate height and weight.
-* Automatically calculate the birth year from the user's age.
-* Add Full Name support.
-* Add BMI calculation.
-* Save the profile to a file.
-* Load an existing profile.
-* Add a menu-based CLI.
-* Split validation and calculation logic into functions.
+- Add better validation for birth date.
+- Prevent impossible dates such as month `13`.
+- Validate height and weight.
+- Automatically calculate the birth year from the user's age.
+- Add Full Name support.
+- Add BMI calculation.
+- Save the profile to a file.
+- Load an existing profile.
+- Add a menu-based CLI.
+- Split validation and calculation logic into functions.
 
 ---
+
+<a id="bonus"></a>
 
 ## 🎁 Bonus
 
@@ -450,75 +527,43 @@ A more accurate version can also consider whether the user's birthday has alread
 
 ---
 
+<a id="notes"></a>
+
 ## 📝 Notes
 
 This project is part of my Python learning journey and focuses on practicing fundamental Python concepts by building a small project from scratch.
 
 The objective is not only to make the program work, but also to understand **why each part of the code is needed and how the different Python concepts work together**.
 
-<a id="العربية"></a>
-# 🧑‍💻 مشروع الملف الشخصي الشخصي — Personal Profile CLI
-
-برنامج بسيط يعمل من خلال **Terminal / CLI** باستخدام Python، يقوم بجمع البيانات الشخصية من المستخدم، والتحقق من صحة الاسم، وحساب العمر الحالي بناءً على تاريخ الميلاد، ثم عرض البيانات في صورة **Personal Profile** منظمة.
-
-### 🇪🇬 العربية
-
-- [نبذة عن المشروع](#نبذة-عن-المشروع)
-- [أهداف المشروع](#أهداف-المشروع)
-- [خصائص المشروع](#خصائص-المشروع)
-- [المفاهيم التي تم تطبيقها](#المفاهيم-التي-تم-تطبيقها)
-- [هيكل المشروع](#هيكل-المشروع)
-- [تشغيل المشروع](#تشغيل-المشروع)
-- [مثال على تشغيل البرنامج](#مثال-على-تشغيل-البرنامج)
-- [التحديات](#التحديات)
-- [ماذا تعلمت](#ماذا-تعلمت)
-- [تحسينات مستقبلية](#تحسينات-مستقبلية)
-- [Bonus](#bonus-1)
-
-
 ---
+
+<a id="arabic"></a>
+
+# 🇪🇬 العربية
 
 ## 📌 نبذة عن المشروع
 
-هذا المشروع من المشاريع التدريبية الأولى في رحلة تعلم Python، والهدف منه تطبيق مجموعة من المفاهيم الأساسية بشكل عملي بدلًا من دراستها بشكل منفصل.
-
-البرنامج يطلب من المستخدم إدخال:
-
-* الاسم
-* سنة الميلاد
-* شهر الميلاد
-* يوم الميلاد
-* الدولة
-* الوظيفة أو التخصص
-* الطول
-* الوزن
-
-ثم يقوم البرنامج بـ:
-
-1. التحقق من صحة الاسم.
-2. تحويل البيانات الرقمية من `str` إلى `int`.
-3. الحصول على التاريخ الحالي.
-4. حساب العمر بشكل دقيق.
-5. تنسيق بعض البيانات النصية.
-6. عرض الملف الشخصي بشكل منظم.
+برنامج بسيط يعمل من خلال **Terminal / CLI** باستخدام Python، يقوم بجمع البيانات الشخصية من المستخدم، والتحقق من صحة الاسم، وحساب العمر الحالي بناءً على تاريخ الميلاد، ثم عرض البيانات في صورة **Personal Profile** منظمة.
 
 ---
 
 ## 🎯 أهداف المشروع
 
+هذا المشروع من المشاريع التدريبية الأولى في رحلة تعلم Python، والهدف منه تطبيق مجموعة من المفاهيم الأساسية بشكل عملي بدلًا من دراستها بشكل منفصل.
+
 الهدف الأساسي من المشروع هو تطبيق المفاهيم التالية من Python:
 
-* Variables
-* Data Types
-* Type Casting
-* Strings
-* String Methods
-* String Formatting
-* User Input
-* Conditional Statements
-* Loops
-* Boolean Logic
-* Basic Date/Time Handling
+- Variables
+- Data Types
+- Type Casting
+- Strings
+- String Methods
+- String Formatting
+- User Input
+- Conditional Statements
+- Loops
+- Boolean Logic
+- Basic Date/Time Handling
 
 ---
 
@@ -530,10 +575,10 @@ The objective is not only to make the program work, but also to understand **why
 
 يتم التأكد من أن:
 
-* الإدخال ليس فارغًا.
-* الإدخال ليس عبارة عن مسافات فقط.
-* جميع الأحرف الموجودة في الاسم حروف أو مسافات.
-* في حالة إدخال قيمة غير صحيحة، يتم طلب الاسم مرة أخرى.
+- الإدخال ليس فارغًا.
+- الإدخال ليس عبارة عن مسافات فقط.
+- جميع الأحرف الموجودة في الاسم حروف أو مسافات.
+- في حالة إدخال قيمة غير صحيحة، يتم طلب الاسم مرة أخرى.
 
 مثال:
 
@@ -587,12 +632,12 @@ datetime.datetime.now()
 
 ثم يحسب العمر بناءً على:
 
-* السنة الحالية
-* الشهر الحالي
-* اليوم الحالي
-* سنة الميلاد
-* شهر الميلاد
-* يوم الميلاد
+- السنة الحالية
+- الشهر الحالي
+- اليوم الحالي
+- سنة الميلاد
+- شهر الميلاد
+- يوم الميلاد
 
 ولا يعتمد البرنامج على طرح سنة الميلاد من السنة الحالية فقط.
 
@@ -602,7 +647,8 @@ datetime.datetime.now()
 
 ```text
 Current Date: 2026-09-03
-Birth Date:   2004-10-10
+
+Birth Date: 2004-10-10
 ```
 
 العمر الصحيح:
@@ -619,7 +665,51 @@ Birth Date:   2004-10-10
 
 ---
 
-## 🧠 منطق حساب العمر
+### 4. المعلومات الشخصية
+
+يطلب البرنامج من المستخدم إدخال:
+
+```text
+Country
+Job
+Height
+Weight
+```
+
+ويتم تنسيق الدولة والوظيفة باستخدام:
+
+```python
+.title()
+```
+
+كما يتم تحويل الطول والوزن إلى أعداد صحيحة باستخدام:
+
+```python
+int()
+```
+
+---
+
+### 5. تنسيق البيانات
+
+بعد إدخال جميع البيانات، يعرض البرنامج الملف الشخصي بشكل منظم:
+
+```text
+=================================
+       PERSONAL PROFILE
+=================================
+Name       : Mostafa Naeam
+Age        : 21
+Country    : Egypt
+Job        : Software Engineer
+Height     : 174 cm
+Weight     : 88 kg
+=================================
+```
+
+---
+
+## 🧮 منطق حساب العمر
 
 في البداية يتم حساب العمر:
 
@@ -685,12 +775,8 @@ Mostafa@Naeam
 
 ```text
 ""
-```
 
-أو:
-
-```text
-"     "
+"   "
 ```
 
 لذلك يتم استخدام:
@@ -737,16 +823,16 @@ while True:
 
 ## 🧾 البيانات التي يتم إدخالها
 
-| البيانات    | نوع البيانات |
-| ----------- | ------------ |
-| Name        | `str`        |
-| Birth Year  | `int`        |
-| Birth Month | `int`        |
-| Birth Day   | `int`        |
-| Country     | `str`        |
-| Job         | `str`        |
-| Height      | `int`        |
-| Weight      | `int`        |
+| البيانات | نوع البيانات |
+| --- | --- |
+| Name | `str` |
+| Birth Year | `int` |
+| Birth Month | `int` |
+| Birth Day | `int` |
+| Country | `str` |
+| Job | `str` |
+| Height | `int` |
+| Weight | `int` |
 
 ---
 
@@ -803,22 +889,22 @@ Weight     : 88 kg
 
 ## 🧩 المفاهيم التي تم تطبيقها
 
-| المفهوم      | استخدامه في المشروع          |
-| ------------ | ---------------------------- |
-| Variables    | تخزين بيانات المستخدم        |
-| `input()`    | استقبال البيانات من المستخدم |
-| `int()`      | تحويل البيانات الرقمية       |
-| Strings      | التعامل مع النصوص            |
-| `.strip()`   | التحقق من الإدخال الفارغ     |
-| `.isalpha()` | التحقق من الحروف             |
-| `all()`      | التحقق من جميع Characters    |
-| `.title()`   | تنسيق النصوص                 |
-| `while`      | تكرار طلب الإدخال            |
-| `continue`   | إعادة محاولة الإدخال         |
-| `break`      | الخروج من حلقة التحقق        |
-| `if`         | تنفيذ الشروط                 |
-| `datetime`   | الحصول على التاريخ الحالي    |
-| f-strings    | تنسيق النصوص عند الطباعة     |
+| المفهوم | استخدامه في المشروع |
+| --- | --- |
+| Variables | تخزين بيانات المستخدم |
+| `input()` | استقبال البيانات من المستخدم |
+| `int()` | تحويل البيانات الرقمية |
+| Strings | التعامل مع النصوص |
+| `.strip()` | التحقق من الإدخال الفارغ |
+| `.isalpha()` | التحقق من الحروف |
+| `all()` | التحقق من جميع Characters |
+| `.title()` | تنسيق النصوص |
+| `while` | تكرار طلب الإدخال |
+| `continue` | إعادة محاولة الإدخال |
+| `break` | الخروج من حلقة التحقق |
+| `if` | تنفيذ الشروط |
+| `datetime` | الحصول على التاريخ الحالي |
+| f-strings | تنسيق النصوص عند الطباعة |
 
 ---
 
@@ -826,6 +912,7 @@ Weight     : 88 kg
 
 ```text
 python-personal-profile/
+
 │
 ├── README.md
 │
@@ -854,12 +941,19 @@ python main.py
 
 ```text
 Enter your name: Mostafa NAEAM
+
 Enter your birth year: 2004
+
 Enter your birth month: 10
+
 Enter your birth day: 10
+
 Enter your country: Egypt
+
 Enter your job: Software Engineer
+
 Enter your height in cm: 174
+
 Enter your weight in kg: 88
 
 =================================
@@ -882,11 +976,11 @@ Weight     : 88 kg
 
 كان من التحديات معرفة الطريقة الصحيحة للتأكد من أن الاسم:
 
-* ليس فارغًا.
-* ليس عبارة عن Spaces فقط.
-* لا يحتوي على أرقام.
-* لا يحتوي على Symbols.
-* يسمح بوجود Spaces بين أجزاء الاسم.
+- ليس فارغًا.
+- ليس عبارة عن Spaces فقط.
+- لا يحتوي على أرقام.
+- لا يحتوي على Symbols.
+- يسمح بوجود Spaces بين أجزاء الاسم.
 
 تم حل ذلك باستخدام:
 
@@ -937,18 +1031,18 @@ Birth Month / Day
 
 ومن أهم الأشياء التي تم تطبيقها:
 
-* استقبال بيانات من المستخدم.
-* التعامل مع أنواع البيانات المختلفة.
-* استخدام Type Casting.
-* التحقق من صحة User Input.
-* استخدام `while` في Input Validation.
-* استخدام `all()` مع Generator Expression.
-* التعامل مع Strings وString Methods.
-* استخدام Boolean Logic.
-* استخدام Conditional Statements.
-* التعامل مع التاريخ باستخدام `datetime`.
-* تنسيق البيانات عند عرضها.
-* التفكير في Edge Cases بدلًا من الاعتماد على الـ Happy Path فقط.
+- استقبال بيانات من المستخدم.
+- التعامل مع أنواع البيانات المختلفة.
+- استخدام Type Casting.
+- التحقق من صحة User Input.
+- استخدام `while` في Input Validation.
+- استخدام `all()` مع Generator Expression.
+- التعامل مع Strings وString Methods.
+- استخدام Boolean Logic.
+- استخدام Conditional Statements.
+- التعامل مع التاريخ باستخدام `datetime`.
+- تنسيق البيانات عند عرضها.
+- التفكير في Edge Cases بدلًا من الاعتماد على الـ Happy Path فقط.
 
 ---
 
@@ -956,17 +1050,17 @@ Birth Month / Day
 
 يمكن تطوير المشروع مستقبلًا بإضافة:
 
-* التحقق من صحة تاريخ الميلاد.
-* منع إدخال شهر غير صحيح مثل `13`.
-* منع إدخال يوم غير صحيح.
-* التحقق من الطول والوزن.
-* إضافة Full Name بشكل أكثر تفصيلًا.
-* حساب سنة الميلاد تلقائيًا من العمر.
-* حساب BMI.
-* حفظ البيانات في ملف.
-* قراءة Profile محفوظ مسبقًا.
-* إضافة Menu للبرنامج.
-* تقسيم الكود إلى Functions.
+- التحقق من صحة تاريخ الميلاد.
+- منع إدخال شهر غير صحيح مثل `13`.
+- منع إدخال يوم غير صحيح.
+- التحقق من الطول والوزن.
+- إضافة Full Name بشكل أكثر تفصيلًا.
+- حساب سنة الميلاد تلقائيًا من العمر.
+- حساب BMI.
+- حفظ البيانات في ملف.
+- قراءة Profile محفوظ مسبقًا.
+- إضافة Menu للبرنامج.
+- تقسيم الكود إلى Functions.
 
 ---
 
@@ -1000,11 +1094,17 @@ Birth Year = Current Year - Age
 
 ```text
 Learning Concepts
+
        ↓
+
 Writing Small Examples
+
        ↓
+
 Building a Real Project
+
        ↓
+
 Understanding the Code
 ```
 
